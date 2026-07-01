@@ -20,10 +20,11 @@
    Reusable colors and layout values for the whole page.
 ================================================== */
 :root {
-    --csuf-blue: #00274c;
-    --csuf-blue-light: #0a3d72;
-    --csuf-orange: #f58220;
-    --csuf-cream: #f9f6ef;
+    --lob-corp-cream: #fffea1;
+    --lob-corp-red: #fc3a3a;
+    --lob-corp-green: #3efda5;
+    --lob-corp-orange: #fa9233;
+    --lob-corp-black: #030102;
     --text-dark: #1f2933;
     --text-light: #ffffff;
     --border: #d7dde5;
@@ -49,8 +50,8 @@ html {
 /* Main page background, text color, and font. */
 body {
     margin: 0;
-    color: var(--text-dark);
-    background: var(--csuf-cream);
+    color: var(--lob-corp-cream);
+    background: var(--lob-corp-black);
     font-family: "Trebuchet MS", sans-serif;
 }
 
@@ -73,8 +74,8 @@ body {
 
 /* Styles the top banner area. */
 header {
-    background: linear-gradient(120deg, var(--csuf-blue) 10%, var(--csuf-blue-light) 90%);
-    color: var(--text-light);
+    background: var(--lob-corp-black);
+    color: var(--lob-corp-red);
     padding: 2.5rem 0;
 }
 
@@ -96,7 +97,7 @@ header p {
 
 /* Styles the orange navigation bar. */
 nav {
-    background-color: var(--csuf-orange);
+    background-color: var(--lob-corp-cream);
 }
 
 /* Removes bullets and places links in a row using Flexbox. */
@@ -118,15 +119,15 @@ nav a {
     padding: 0.7rem 0.2rem;
     text-decoration: none;
     font-weight: 700;
-    color: #1a2633;
+    color: var(--lob-corp-black);
     border-bottom: 3px solid transparent;
 }
 
 /* Effect: changes link appearance when hovered or keyboard-focused. */
 nav a:hover,
 nav a:focus-visible {
-    color: var(--csuf-blue);
-    border-color: var(--csuf-blue);
+    color: var(--lob-corp-red);
+    border-color: var(--lob-corp-red);
     outline: none;
 }
 
@@ -147,8 +148,8 @@ img {
 
 /* Styles each content section like a card. */
 .section {
-    background: #ffffff;
-    border: 1px solid var(--border);
+    background: var(--lob-corp-black);
+    border: 1px solid var(--lob-corp-red);
     border-radius: 12px;
     padding: 1.5rem;
     margin-bottom: 2rem;
@@ -157,8 +158,8 @@ img {
 /* Styles section headings. */
 .section h2 {
     margin-top: 0;
-    color: var(--csuf-blue);
-    border-left: 6px solid var(--csuf-orange);
+    color: var(--lob-corp-red);
+    border-left: 6px solid var(--lob-corp-red);
     padding-left: 0.7rem;
 }
 
@@ -176,8 +177,8 @@ img {
 
 /* Styles each movie card. */
 .movie-card {
-    background: var(--card-bg);
-    border: 1px solid #e7dacc;
+    background: var(--lob-corp-black);
+    border: 1px solid var(--lob-corp-cream);
     border-radius: 12px;
     padding: 1rem;
     display: flex;
@@ -189,7 +190,7 @@ img {
 /* Adds a small lift effect when hovering over a movie card. */
 .movie-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 24px rgba(0, 39, 76, 0.15);
+    box-shadow: 0 12px 24px rgba(214, 223, 101, 0.15);
 }
 
 /* Removes extra default spacing from movie titles and paragraphs. */
@@ -204,9 +205,17 @@ img {
     height: 300px;
     object-fit: cover;
     border-radius: 8px;
-    border: 1px solid #e1e5ea;
+    border: 1px solid var(--lob-corp-cream);
 }
 
+.movie-card video,
+.movie-card audio {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid var(--lob-corp-cream);
+}
 
 /* ==================================================
    8. Buttons
@@ -220,8 +229,8 @@ img {
     border-radius: 100px;
     padding: 0.55rem 1rem;
     text-decoration: none;
-    background-color: var(--csuf-blue);
-    color: var(--text-light);
+    background-color: var(--lob-corp-green);
+    color: var(--lob-corp-black);
     cursor: pointer;
 }
 
@@ -246,11 +255,11 @@ img {
 #reviews select,
 #reviews textarea {
     width: 100%;
-    border: 1px solid #bcc7d3;
+    border: 1px solid var(--lob-corp-orange);
     border-radius: 8px;
     padding: 0.65rem 0.75rem;
-    background-color: #f9fbfd;
-    color: #334a60;
+    background-color: var(--lob-corp-black );
+    color: var(--lob-corp-cream);
 }
 
 /* Gives the textarea a larger height and vertical resizing. */
@@ -270,8 +279,8 @@ img {
 
 /* Makes the review form button orange instead of blue. */
 #reviews input[type="submit"] {
-    background-color: var(--csuf-orange);
-    color: #1f2125;
+    background-color: var(--lob-corp-cream);
+    color: var(--lob-corp-red);
     display: block;
     margin-inline: auto;
 }
@@ -279,9 +288,9 @@ img {
 /* Styles the message saying the review feature is not ready. */
 .status-banner {
     margin-top: 0;
-    background: #fff2e3;
-    color: #5f2d00;
-    border: 1px solid #f2cc9f;
+    background: var(--lob-corp-cream);
+    color: var(--lob-corp-cream);
+    border: 1px solid var(--lob-corp-cream);
     border-radius: 8px;
     padding: 0.7rem;
 }
@@ -295,7 +304,7 @@ img {
 .movies-table {
     width: 100%;
     border-collapse: collapse;
-    border: 1px solid var(--border);
+    border: 1px solid var(--lob-corp-cream);
     border-radius: 10px;
     overflow: hidden;
 }
@@ -307,8 +316,8 @@ img {
 
 /* Styles the table header row. */
 .movies-table thead {
-    background: var(--csuf-blue);
-    color: var(--text-light);
+    background: var(--lob-corp-black);
+    color: var(--lob-corp-cream);
 }
 
 /* Adds padding and borders to table cells. */
@@ -316,12 +325,12 @@ img {
 .movies-table td {
     text-align: left;
     padding: 0.75rem;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid var(--lob-corp-cream);
 }
 
 /* Adds alternating row color for readability. */
 .movies-table tbody tr:nth-child(even) {
-    background-color: #f7fafc;
+    background-color: var(--lob-corp-black);
 }
 
 
@@ -331,8 +340,8 @@ img {
 
 /* Styles the footer at the bottom of the page. */
 footer {
-    background-color: var(--csuf-blue);
-    color: var(--text-light);
+    background-color: var(--lob-corp-green);
+    color: var(--lob-corp-black);
     text-align: center;
     padding: 1.5rem 1rem;
 }
@@ -344,13 +353,13 @@ footer p {
 
 /* Styles links inside the footer. */
 footer a {
-    color: #ffd9b5;
+    color: var(--lob-corp-red);
 }
 
 /* Changes footer link color on hover or keyboard focus. */
 footer a:hover,
 footer a:focus-visible {
-    color: #ffffff;
+    color: var(--lob-corp-orange);
 }
 
 
