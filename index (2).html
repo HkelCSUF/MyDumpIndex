@@ -1,0 +1,181 @@
+<!-- doctype: Declares the document type as HTML5 to ensure correct rendering in modern web browsers -->
+<!DOCTYPE html>
+<!-- html: The root container holding all of the document's elements and metadata -->
+<html lang="en">
+
+<!-- head: Holds machine-readable information (metadata) about the document, such as character sets and viewport definitions -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CPSC-349 Lab 1: Movies Portal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<!-- body: Encloses all the visible, renderable content of the web page shown to the user -->
+
+<body>
+
+    <!-- header: Groups introductory content, branding, and major titles at the top of a page or section -->
+    <header>
+        <div class="container">
+            <h1>Movies Portal</h1>
+            <p>Welcome to the Movies Portal. Explore movies, genres, ratings, and reviews.</p>
+        </div>
+    </header>
+
+    <!-- nav: Defines a set of navigation links designed for site-wide or page-specific menus -->
+    <nav>
+        <ul>
+            <li><a href="#featured">Featured Movies</a></li>
+            <li><a href="#genres">Genres</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- main: Encloses the unique, central content of the document that is not repeated across other pages -->
+    <main class="container">
+
+        <!-- section: Groups related content together into distinct thematic regions of a page -->
+        <section id="featured" class="section">
+            <h2>Featured Movies</h2>
+
+            <div class="movie-grid">
+
+            <!-- article: Defines a self-contained, independent composition like a card, post, or article -->
+            <article class="movie-card">
+                <h3>Clerk down</h3>
+                <img src="images/clerkdown.png" alt="Clerk down Poster" width="200">
+                <p>It breached again.</p>
+                <p><strong>Rating:</strong> 8.7/10</p>
+                <p><strong>Trailer:</strong></p>
+                <p><video controls src="videos/Clerck_Down_YIPEE(2).mp4" type="video/mp4" width="200"> </video></p>
+                <p><strong>Theme:</strong></p>
+                <p><audio controls src="audio/09. First Warning.mp3" type="audio/mp3" width="200"></audio></p>
+                <a class="btn" href="details.html">View Details</a>
+            </article>
+
+            <article class="movie-card">
+                <h3>Cyberpunk Edgerunners</h3>
+                <img src="images/edgerunners.jpg" alt="Cyberpunk Edgerunners Poster" width="200">
+                <p>A Street Kid trying to survive in a technology and body modification-obsessed city of the future. Having everything to lose, he chooses to stay alive by becoming an Edgerunner, a Mercenary outlaw also known as a Cyberpunk.</p>
+                <p><strong>Rating:</strong> 8.5/10</p>
+                <p><strong>Trailer:</strong></p>
+                <p><video controls src="videos/EdgeRunners.mp4" type="video/mp4" width="200"></video></p>
+                <p><strong>Theme:</strong></p>
+                <p><audio controls src="audio/11. I Really Want to Stay at Your House.mp3" type="audio/mp3" width="200"></audio></p>
+                <a class="btn" href="details.html">View Details</a>
+            </article>
+
+            <article class="movie-card">
+                <h3>Kerbal Space Program</h3>
+                <img src="images/shitfuck22.jpg" alt="Kerbal Space Program Poster" width="200">
+                <p>Make A Rocket That Goes to Space</p>
+                <p><strong>Rating:</strong> 8.9/10</p>
+                <p><strong>Trailer:</strong></p>
+                <p><video controls src="videos/successfulLaunch.mp4" type="video/mp4" width="200"></video></p>
+                <p><strong>Theme:</strong></p>
+                <p><audio controls src="audio/2. Bathed in the Light.mp3" type="audio/mp3" width="200"></audio></p>
+                <a class="btn" href="details.html">View Details</a>
+            </article>
+            </div>
+        </section>
+
+        <section id="genres" class="section">
+            <h2>Movie Genres</h2>
+
+            <!-- ul: Defines an unordered (bulleted) list of items -->
+            <ul>
+                <li>Action</li>
+                <li>Comedy</li>
+                <li>Drama</li>
+                <li>Science Fiction</li>
+                <li>Horror</li>
+            </ul>
+        </section>
+
+        <section id="top-movies" class="section">
+            <h2>Top Movies Table</h2>
+
+            <!-- table: Formats structured tabular data into organized rows, header blocks, and data cells -->
+            <table class="movies-table">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Genre</th>
+                        <th>Year</th>
+                        <th>Rating</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Clerk Down</td>
+                        <td>Action / Sci-Fi / Horror</td>
+                        <td>2018</td>
+                        <td>8.7</td>
+                    </tr>
+                    <tr>
+                        <td>Cyberpunk: Edgerunners</td>
+                        <td>Action / Sci-Fi</td>
+                        <td>2022</td>
+                        <td>8.5</td>
+                    </tr>
+                    <tr>
+                        <td>Kerbal Space Program</td>
+                        <td>Science Fiction</td>
+                        <td>2012</td>
+                        <td>8.9</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="reviews" class="section">
+            <h2>Submit a Movie Review (Available Soon)</h2>
+            <p><strong>Status:</strong> This feature is under development and will be available soon!</p>
+
+            <!-- form: Wraps interactive controls to capture and submit user input -->
+            <form action="#" method="post">
+                <!-- label: Provides a text label linked directly to a form control for accessibility -->
+                <label for="movie-title">Movie Title:</label>
+                <br>
+                <!-- input: Creates basic interactive fields to capture user text or button clicks -->
+                <input type="text" id="movie-title" name="movie-title" placeholder="Coming soon..." disabled>
+                <br><br>
+
+                <label for="rating">Rating:</label>
+                <br>
+                <!-- select: Creates a drop-down menu for selecting from multiple options -->
+                <select id="rating" name="rating" disabled>
+                    <option value="5">5 - Excellent</option>
+                    <option value="4">4 - Good</option>
+                    <option value="3">3 - Average</option>
+                    <option value="2">2 - Poor</option>
+                    <option value="1">1 - Terrible</option>
+                </select>
+                <br><br>
+
+                <label for="review">Your Review:</label>
+                <br>
+                <!-- textarea: Provides a multi-line text input control suitable for longer text entries -->
+                <textarea id="review" name="review" rows="5" cols="40" placeholder="Write review here once available..."
+                    disabled></textarea>
+                <br><br>
+
+                <input type="submit" value="Submit Review" disabled>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- footer: Contains concluding page details such as copyright notices and contact information -->
+    <footer id="contact" class="footer">
+        <p>&copy; 2026 Movies Portal</p>
+        <p>Contact us at <a href="mailto:movies@example.com">movies@cspc349.com</a></p>
+    </footer>
+
+</body>
+
+</html>
