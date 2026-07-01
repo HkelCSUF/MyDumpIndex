@@ -11,6 +11,8 @@
 
    element  - Selects all elements of a given type
               Examples: body, header, nav, section, table in HTML -> body, header, nav, section, table in CSS
+
+              
 ================================================== */
 
 /* ==================================================
@@ -99,7 +101,9 @@ nav {
 
 /* Removes bullets and places links in a row using Flexbox. */
 nav ul {
+    width: 1200px;
     margin: 0;
+    margin-inline: auto;
     padding: 0.5rem 1rem;
     list-style: none;
     display: flex;
@@ -136,6 +140,11 @@ main {
     padding: 2.5rem 0;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 /* Styles each content section like a card. */
 .section {
     background: #ffffff;
@@ -161,7 +170,7 @@ main {
 /* Creates a responsive grid layout for movie cards. */
 .movie-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
     gap: 1.25rem;
 }
 
@@ -206,7 +215,7 @@ main {
 /* Styles links and inputs that should look like buttons. */
 .btn {
     display: inline-block;
-    align-self: center; 
+    align-self: center;
     border: 0;
     border-radius: 100px;
     padding: 0.55rem 1rem;
@@ -222,14 +231,14 @@ main {
    The #reviews selector targets only the reviews section.
 ================================================== */
 
-/* Limits the width of the review form. */
-#reviews form {
-    
-}
+
+
 
 /* Styles labels inside the reviews section. */
 #reviews label {
- 
+    display: inline-block;
+    margin-bottom: 0.35rem;
+    font-weight: 700;
 }
 
 /* Styles text inputs, dropdowns, and textareas in the form. */
@@ -260,9 +269,11 @@ main {
 }
 
 /* Makes the review form button orange instead of blue. */
-#reviews .btn {
+#reviews input[type="submit"] {
     background-color: var(--csuf-orange);
     color: #1f2125;
+    display: block;
+    margin-inline: auto;
 }
 
 /* Styles the message saying the review feature is not ready. */
@@ -287,6 +298,11 @@ main {
     border: 1px solid var(--border);
     border-radius: 10px;
     overflow: hidden;
+}
+
+.table-wrap {
+    width: 100%;
+    overflow-x: auto;
 }
 
 /* Styles the table header row. */
@@ -336,3 +352,71 @@ footer a:hover,
 footer a:focus-visible {
     color: #ffffff;
 }
+
+
+
+/* DEMO: Uncomment to see effect */
+@media (max-width: 640px) {
+    .container {
+        width: 95%;
+    }
+
+    header {
+        padding: 2rem 0;
+    }
+
+    nav ul {
+        width: 100%;
+        justify-content: center;
+        gap: 0.25rem;
+        padding: 0.4rem 0.5rem;
+    }
+
+    nav a {
+        display: block;
+        text-align: center;
+        padding: 0.65rem 0.35rem;
+    }
+
+
+    .movie-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .movie-card img {
+        width: min(100%, 250px);
+        height: auto;
+        max-height: 420px;
+        align-self: center;
+    }
+}
+
+/* TODO: Add responsive design for iPads */
+@media (max-width: 1024px) {
+    .container {
+        width: 90%;
+    }
+    header {
+        padding: 2rem 0;
+    }
+    nav ul{
+        width: 100%;
+        justify-content:center;
+        gap: 0.25rem;
+        padding: 0.4rem 0.5rem;
+    }
+    nav a {
+        display: block;
+        text-align: center;
+        padding: 0.65rem 0.35rem;
+    }
+    .movie-grid {
+        grid-template-columns: repeat(1fr);
+    }
+    .movie-card img {
+        width: min(100%, 250px);
+        height: auto;
+        max-height: 420px;
+        align-self: center;
+    }
+} 
